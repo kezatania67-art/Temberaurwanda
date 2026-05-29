@@ -5,7 +5,7 @@
     <!-- HERO SECTION -->
     <section
       class="h-screen bg-cover bg-center flex items-center justify-center text-white"
-      style="background-image: url('/src/assets/images/tembera2.png');"
+      style="background-image: url('/src/assets/images/tembera6.png');"
     >
       <div class="bg-black/60 p-10 rounded-2xl text-center">
         <h1 class="text-5xl font-bold mb-4">Tembera u Rwanda</h1>
@@ -32,7 +32,7 @@
         <!-- CARD 1 -->
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
           <img
-            src="/src/assets/images/tembera4.png"
+            src="/src/assets/images/tembera6.png"
             alt="Kigali"
             class="h-56 w-full object-cover"
           />
@@ -69,7 +69,7 @@
         <!-- CARD 3 -->
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
           <img
-            src="/src/assets/images/tembera6.png"
+            src="/src/assets/images/tembera7.png"
             alt="Lake Kivu"
             class="h-56 w-full object-cover"
           />
