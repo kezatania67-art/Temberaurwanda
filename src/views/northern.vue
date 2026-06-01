@@ -1,11 +1,16 @@
+<script setup>
+import { t } from '../i18n.js'
+import northImage from '../assets/images/tembera2.png'
+</script>
+
 <template>
   <div class="page">
 
     <section class="hero" :style="{ backgroundImage: `url(${northImage})` }">
       <div class="overlay">
         <div class="hero-content">
-          <h1 class="title">Northern Province</h1>
-          <p class="subtitle">Land of Volcanoes 🏔️</p>
+          <h1 class="title">{{ t('pageTitleNorthern') }}</h1>
+          <p class="subtitle">{{ t('pageSubtitleNorthern') }}</p>
         </div>
       </div>
     </section>
@@ -13,31 +18,30 @@
     <section class="container">
       <div class="glass-card animate">
 
-        <h2>Explore Northern Rwanda</h2>
+        <h2>{{ t('exploreNorthern') }}</h2>
 
         <p>
-          The Northern Province is home to Volcanoes National Park,
-          famous for mountain gorillas and breathtaking volcanic landscapes.
+          {{ t('northernSummary') }}
         </p>
 
         <div class="stats">
           <div class="stat">
-            <h3>🦍 Wildlife</h3>
-            <p>Mountain gorillas</p>
+            <h3>{{ t('northernStat1Title') }}</h3>
+            <p>{{ t('northernStat1Desc') }}</p>
           </div>
 
           <div class="stat">
-            <h3>🏔️ Volcanoes</h3>
-            <p>Scenic mountains</p>
+            <h3>{{ t('northernStat2Title') }}</h3>
+            <p>{{ t('northernStat2Desc') }}</p>
           </div>
 
           <div class="stat">
-            <h3>🌿 Nature</h3>
-            <p>Green forests</p>
+            <h3>{{ t('northernStat3Title') }}</h3>
+            <p>{{ t('northernStat3Desc') }}</p>
           </div>
         </div>
 
-        <button class="btn">Discover More</button>
+        <button class="btn">{{ t('discoverMore') }}</button>
 
       </div>
     </section>

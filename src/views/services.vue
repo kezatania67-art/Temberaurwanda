@@ -4,9 +4,9 @@
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="overlay">
-        <h1 class="hero-title">Our Services</h1>
+        <h1 class="hero-title">{{ t('servicesHeroTitle') }}</h1>
         <p class="hero-subtitle">
-          Making your journey through Rwanda unforgettable
+          {{ t('servicesHeroSubtitle') }}
         </p>
       </div>
     </section>
@@ -16,45 +16,45 @@
 
       <div class="service-card">
         <span class="icon">🧭</span>
-        <h2>Tour Guides</h2>
-        <p>Professional local guides for every destination.</p>
+        <h2>{{ t('tourGuides') }}</h2>
+        <p>{{ t('tourGuidesDesc') }}</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🚐</span>
-        <h2>Transport</h2>
-        <p>Comfortable and secure travel across Rwanda.</p>
+        <h2>{{ t('transport') }}</h2>
+        <p>{{ t('transportDesc') }}</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🏨</span>
-        <h2>Hotel Booking</h2>
-        <p>Find the best accommodation for your stay.</p>
+        <h2>{{ t('hotelBooking') }}</h2>
+        <p>{{ t('hotelBookingDesc') }}</p>
       </div>
 
       <div class="service-card">
         <span class="icon">📸</span>
-        <h2>Photography Tours</h2>
-        <p>Capture Rwanda's beauty with expert guidance.</p>
+        <h2>{{ t('photographyTours') }}</h2>
+        <p>{{ t('photographyToursDesc') }}</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🦍</span>
-        <h2>Gorilla Trekking</h2>
-        <p>Experience Rwanda’s world-famous mountain gorillas.</p>
+        <h2>{{ t('gorillaTrekking') }}</h2>
+        <p>{{ t('gorillaTrekkingDesc') }}</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🌋</span>
-        <h2>Adventure Tours</h2>
-        <p>Explore volcanoes, lakes, and breathtaking landscapes.</p>
+        <h2>{{ t('adventureTours') }}</h2>
+        <p>{{ t('adventureToursDesc') }}</p>
       </div>
 
     </section>
 
     <!-- IMAGE SHOWCASE -->
     <section class="gallery-section">
-      <h2>Travel Experiences</h2>
+      <h2>{{ t('travelExperiences') }}</h2>
 
       <div class="gallery">
 
@@ -72,10 +72,10 @@
     <!-- IMAGE UPLOAD -->
     <section class="upload-section">
 
-      <h2>Upload Your Rwanda Experience</h2>
+      <h2>{{ t('uploadExperience') }}</h2>
 
       <p>
-        Share your favorite travel moments from around Rwanda.
+        {{ t('shareTravelMoments') }}
       </p>
 
       <input
@@ -98,14 +98,15 @@
 
     <!-- CTA -->
     <section class="cta">
-      <h2>Ready To Explore Rwanda?</h2>
-      <button>Book Your Journey</button>
+      <h2>{{ t('readyToExplore') }}</h2>
+      <button>{{ t('bookJourney') }}</button>
     </section>
 
   </div>
 </template>
 
 <script>
+import { t } from '../i18n.js'
 import serviceImage1 from '../assets/images/tembera2.png'
 import serviceImage2 from '../assets/images/tembera3.png'
 

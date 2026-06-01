@@ -1,11 +1,16 @@
+<script setup>
+import { t } from '../i18n.js'
+import eastImage from '../assets/images/tembera1.png'
+</script>
+
 <template>
   <div class="page">
 
     <section class="hero" :style="{ backgroundImage: `url(${eastImage})` }">
       <div class="overlay">
         <div class="hero-content">
-          <h1 class="title">Eastern Province</h1>
-          <p class="subtitle">Wildlife • Safari • Adventure 🐘</p>
+          <h1 class="title">{{ t('pageTitleEastern') }}</h1>
+          <p class="subtitle">{{ t('pageSubtitleEastern') }}</p>
         </div>
       </div>
     </section>
@@ -13,35 +18,33 @@
     <section class="container">
       <div class="glass-card">
 
-        <h2>Explore Eastern Rwanda</h2>
+        <h2>{{ t('exploreEastern') }}</h2>
 
         <p>
-          Eastern Province is home to Akagera National Park,
-          where visitors enjoy wildlife safaris, lakes, and
-          unforgettable outdoor adventures.
+          {{ t('easternSummary') }}
         </p>
 
         <div class="stats">
 
           <div class="stat">
-            <h3>🦁 Safari</h3>
-            <p>Wildlife experiences</p>
+            <h3>{{ t('easternStat1Title') }}</h3>
+            <p>{{ t('easternStat1Desc') }}</p>
           </div>
 
           <div class="stat">
-            <h3>🚤 Lakes</h3>
-            <p>Beautiful water views</p>
+            <h3>{{ t('easternStat2Title') }}</h3>
+            <p>{{ t('easternStat2Desc') }}</p>
           </div>
 
           <div class="stat">
-            <h3>🌄 Adventure</h3>
-            <p>Outdoor activities</p>
+            <h3>{{ t('easternStat3Title') }}</h3>
+            <p>{{ t('easternStat3Desc') }}</p>
           </div>
 
         </div>
 
         <button class="btn">
-          Explore Eastern Province
+          {{ t('discoverMore') }}
         </button>
 
       </div>

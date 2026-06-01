@@ -1,3 +1,8 @@
+<script setup>
+import { t } from '../i18n.js'
+import kigaliImage from '../assets/images/tembera4.png'
+</script>
+
 <template>
   <div class="page">
 
@@ -5,8 +10,8 @@
     <section class="hero" :style="{ backgroundImage: `url(${kigaliImage})` }">
       <div class="overlay">
         <div class="hero-content">
-          <h1 class="title">Kigali City</h1>
-          <p class="subtitle">The Heart of Rwanda 🇷🇼</p>
+          <h1 class="title">{{ t('pageTitleKigali') }}</h1>
+          <p class="subtitle">{{ t('pageSubtitleKigali') }}</p>
         </div>
       </div>
     </section>
@@ -15,30 +20,29 @@
     <section class="container">
 
       <div class="glass-card animate">
-        <h2>Explore Kigali</h2>
+        <h2>{{ t('exploreKigali') }}</h2>
         <p>
-          Kigali is a modern, clean, and safe city surrounded by beautiful hills.
-          It is the center of business, culture, and tourism in Rwanda.
+          {{ t('kigaliSummary') }}
         </p>
 
         <div class="stats">
           <div class="stat">
-            <h3>🌿 Clean</h3>
-            <p>Eco-friendly city</p>
+            <h3>🌿 {{ t('clean') }}</h3>
+            <p>{{ t('cleanDesc') }}</p>
           </div>
 
           <div class="stat">
-            <h3>🏙️ Modern</h3>
-            <p>Fast growing capital</p>
+            <h3>🏙️ {{ t('modern') }}</h3>
+            <p>{{ t('modernDesc') }}</p>
           </div>
 
           <div class="stat">
-            <h3>🛡️ Safe</h3>
-            <p>One of Africa’s safest cities</p>
+            <h3>🛡️ {{ t('safe') }}</h3>
+            <p>{{ t('safeDesc') }}</p>
           </div>
         </div>
 
-        <button class="btn">Discover More</button>
+        <button class="btn">{{ t('discoverMore') }}</button>
       </div>
 
     </section>

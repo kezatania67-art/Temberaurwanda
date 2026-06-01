@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { t } from '../i18n.js'
 
 import hero1 from '../assets/images/tembera1.png'
 import hero2 from '../assets/images/tembera4.png'
@@ -16,19 +17,19 @@ onMounted(() => {
 
 const destinations = [
   {
-    title: 'Kigali City',
+    title: 'destinationKigaliTitle',
     image: hero2,
-    description: 'Modern city life, culture and nightlife.'
+    description: 'destinationKigaliDesc'
   },
   {
-    title: 'Volcanoes National Park',
+    title: 'destinationVolcanoTitle',
     image: hero1,
-    description: 'Home of the mountain gorillas.'
+    description: 'destinationVolcanoDesc'
   },
   {
-    title: 'Lake Kivu',
+    title: 'destinationLakeTitle',
     image: hero3,
-    description: 'Relax and enjoy beautiful lakeside views.'
+    description: 'destinationLakeDesc'
   }
 ]
 </script>
@@ -54,27 +55,26 @@ const destinations = [
         <h1
           class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-pulse"
         >
-          Discover The Beauty Of Rwanda
+          {{ t('homeHeroTitle') }}
         </h1>
 
         <p
           class="text-lg md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8"
         >
-          Explore breathtaking landscapes, wildlife adventures,
-          cultural experiences and unforgettable destinations.
+          {{ t('photosHeroText') }}
         </p>
 
         <div class="flex justify-center gap-4 flex-wrap">
           <button
             class="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full font-bold transition duration-300 hover:scale-110"
           >
-            Explore Now
+            {{ t('photosExploreNow') }}
           </button>
 
           <button
             class="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300"
           >
-            Watch Video
+            {{ t('photosWatchVideo') }}
           </button>
         </div>
       </div>
@@ -114,7 +114,7 @@ const destinations = [
         <h2
           class="text-4xl md:text-5xl font-bold text-center mb-16"
         >
-          Popular Destinations
+          {{ t('popularDestinations') }}
         </h2>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -132,17 +132,17 @@ const destinations = [
 
             <div class="p-6">
               <h3 class="text-2xl font-bold mb-3">
-                {{ destination.title }}
+                {{ t(destination.title) }}
               </h3>
 
               <p class="text-gray-400">
-                {{ destination.description }}
+                {{ t(destination.description) }}
               </p>
 
               <button
                 class="mt-5 bg-yellow-500 text-black px-5 py-3 rounded-full hover:bg-yellow-400 transition"
               >
-                Learn More
+                {{ t('exploreNow') }}
               </button>
             </div>
           </div>
@@ -157,19 +157,17 @@ const destinations = [
       >
         <div>
           <h2 class="text-5xl font-bold mb-6">
-            Experience Rwanda Like Never Before
+            {{ t('experienceTitle') }}
           </h2>
 
           <p class="text-gray-400 text-lg leading-relaxed">
-            Discover wildlife safaris, luxury stays, cultural
-            experiences, beautiful lakes, and vibrant city life.
-            Every journey tells a unique story.
+            {{ t('experienceText') }}
           </p>
 
           <button
             class="mt-8 bg-yellow-500 text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition"
           >
-            Start Your Adventure
+            {{ t('startAdventure') }}
           </button>
         </div>
 
@@ -194,17 +192,17 @@ const destinations = [
     <!-- CTA -->
     <section class="py-24 text-center px-6">
       <h2 class="text-5xl font-bold mb-6">
-        Ready To Explore Rwanda?
+        {{ t('readyExploreTitle') }}
       </h2>
 
       <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-        Plan your next adventure and discover the Land of a Thousand Hills.
+        {{ t('readyExploreText') }}
       </p>
 
       <button
         class="bg-yellow-500 text-black px-10 py-5 rounded-full text-lg font-bold hover:scale-110 transition"
       >
-        Book Your Journey
+        {{ t('bookJourney') }}
       </button>
     </section>
 

@@ -1,14 +1,18 @@
+<script setup>
+import { t } from '../i18n.js'
+</script>
+
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-green-50 to-white py-16 px-6">
+  <div class="min-h-screen bg-linear-to-b from-green-50 to-white py-16 px-6">
 
     <!-- TITLE -->
     <div class="text-center mb-12 animate-fadeIn">
       <h1 class="text-5xl font-bold text-green-700 mb-4">
-        About Rwanda
+        {{ t('aboutTitle') }}
       </h1>
 
       <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-        Discover the beauty, culture, and story of the Land of a Thousand Hills.
+        {{ t('aboutDescription') }}
       </p>
     </div>
 
@@ -24,7 +28,7 @@
           <img
             :src="aboutImage"
             alt="About Rwanda"
-            class="rounded-2xl w-full h-[350px] object-cover hover:scale-105 transition duration-500"
+            class="rounded-2xl w-full h-87.5 object-cover hover:scale-105 transition duration-500"
           />
         </div>
 
@@ -34,41 +38,39 @@
       <div class="animate-slideRight">
 
         <h2 class="text-3xl font-bold text-green-700 mb-4">
-          Why Rwanda?
+          {{ t('whyRwanda') }}
         </h2>
 
         <p class="text-gray-700 leading-relaxed mb-6">
-          Rwanda is one of Africa’s most beautiful and fast-growing tourism destinations.
-          Known for its clean cities, rich wildlife, and friendly people, it offers unforgettable experiences
-          for every traveler.
+          {{ t('rwandaSummary') }}
         </p>
 
         <div class="space-y-4">
 
           <div class="flex items-center gap-3 hover:translate-x-2 transition">
             <span class="text-green-600 text-xl">✔</span>
-            <p>Safe and clean environment</p>
+            <p>{{ t('feature1') }}</p>
           </div>
 
           <div class="flex items-center gap-3 hover:translate-x-2 transition">
             <span class="text-green-600 text-xl">✔</span>
-            <p>Mountain gorilla trekking</p>
+            <p>{{ t('feature2') }}</p>
           </div>
 
           <div class="flex items-center gap-3 hover:translate-x-2 transition">
             <span class="text-green-600 text-xl">✔</span>
-            <p>Beautiful landscapes & lakes</p>
+            <p>{{ t('feature3') }}</p>
           </div>
 
           <div class="flex items-center gap-3 hover:translate-x-2 transition">
             <span class="text-green-600 text-xl">✔</span>
-            <p>Rich culture and heritage</p>
+            <p>{{ t('feature4') }}</p>
           </div>
 
         </div>
 
         <button class="mt-8 bg-green-700 text-white px-6 py-3 rounded-full hover:bg-green-900 hover:scale-105 transition">
-          Explore More
+          {{ t('exploreMore') }}
         </button>
 
       </div>

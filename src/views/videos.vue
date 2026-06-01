@@ -1,49 +1,53 @@
+<script setup>
+import { t } from '../i18n.js'
+</script>
+
 <template>
   <section class="videos-page">
 
     <div class="hero">
-      <h1>Tembera u Rwanda</h1>
-      <p>Experience Rwanda's Culture, Infrastructure & Tourism</p>
+      <h1>{{ t('videosPageTitle') }}</h1>
+      <p>{{ t('videosPageSubtitle') }}</p>
     </div>
 
     <div class="video-grid">
 
       <div class="video-card">
         <iframe
-          src="https://youtu.be/2p9Qt60W91Q?si=99hNIiFvN30sEFda"
+          src="https://www.youtube.com/embed/2p9Qt60W91Q?autoplay=1&mute=1"
           allow="autoplay; encrypted-media"
           allowfullscreen>
         </iframe>
 
         <div class="caption">
-          <h2>Rwandan Culture</h2>
-          <p>Traditional dances, drumming and heritage.</p>
+          <h2>{{ t('videoTitle1') }}</h2>
+          <p>{{ t('videoDesc1') }}</p>
         </div>
       </div>
 
       <div class="video-card">
         <iframe
-          src="https://youtu.be/Ov8JhHzPUKo?si=gLHZ9H6NIyHojHaz"
+          src="https://www.youtube.com/embed/Ov8JhHzPUKo?autoplay=1&mute=1"
           allow="autoplay; encrypted-media"
           allowfullscreen>
         </iframe>
 
         <div class="caption">
-          <h2>Modern Kigali</h2>
-          <p>Infrastructure, innovation and city life.</p>
+          <h2>{{ t('videoTitle2') }}</h2>
+          <p>{{ t('videoDesc2') }}</p>
         </div>
       </div>
 
       <div class="video-card">
         <iframe
-          src="https://youtu.be/5FVO3IHwIzw?si=KkXlvaikEmFmGfrZ"
+          src="https://www.youtube.com/embed/5FVO3IHwIzw?autoplay=1&mute=1"
           allow="autoplay; encrypted-media"
           allowfullscreen>
         </iframe>
 
         <div class="caption">
-          <h2>Visit Rwanda</h2>
-          <p>Wildlife, mountains and tourism destinations.</p>
+          <h2>{{ t('videoTitle3') }}</h2>
+          <p>{{ t('videoDesc3') }}</p>
         </div>
       </div>
 

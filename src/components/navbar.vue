@@ -24,7 +24,7 @@
             class="hover:text-yellow-300 transition"
             active-class="text-yellow-300 border-b-4 border-yellow-300 pb-1"
           >
-            {{ t.home }}
+            {{ t('home') }}
           </router-link>
         </li>
 
@@ -34,7 +34,7 @@
             class="hover:text-yellow-300 transition"
             active-class="text-yellow-300 border-b-4 border-yellow-300 pb-1"
           >
-            {{ t.about }}
+            {{ t('about') }}
           </router-link>
         </li>
 
@@ -44,7 +44,7 @@
             class="hover:text-yellow-300 transition"
             active-class="text-yellow-300 border-b-4 border-yellow-300 pb-1"
           >
-            {{ t.services }}
+            {{ t('services') }}
           </router-link>
         </li>
 
@@ -54,7 +54,7 @@
             @click="toggleGallery"
             class="hover:text-yellow-300 transition"
           >
-            {{ t.gallery }} ▼
+            {{ t('gallery') }} ▼
           </button>
 
           <div
@@ -66,7 +66,7 @@
               @click="closeMenus"
               class="block px-4 py-3 hover:bg-yellow-300"
             >
-              Photos
+              {{ t('photos') }}
             </router-link>
 
             <router-link
@@ -74,7 +74,7 @@
               @click="closeMenus"
               class="block px-4 py-3 hover:bg-yellow-300"
             >
-              Videos
+              {{ t('videos') }}
             </router-link>
           </div>
         </li>
@@ -85,7 +85,7 @@
             @click="toggleDestination"
             class="hover:text-yellow-300 transition"
           >
-            {{ t.destination }} ▼
+            {{ t('destination') }} ▼
           </button>
 
           <div
@@ -97,7 +97,7 @@
               @click="closeMenus"
               class="block px-4 py-3 hover:bg-yellow-300"
             >
-              Kigali City
+              {{ t('kigali') }}
             </router-link>
 
             <router-link
@@ -105,7 +105,7 @@
               @click="closeMenus"
               class="block px-4 py-3 hover:bg-yellow-300"
             >
-              Northern Province
+              {{ t('northern') }}
             </router-link>
 
             <router-link
@@ -113,7 +113,7 @@
               @click="closeMenus"
               class="block px-4 py-3 hover:bg-yellow-300"
             >
-              Southern Province
+              {{ t('southern') }}
             </router-link>
 
             <router-link
@@ -121,7 +121,7 @@
               @click="closeMenus"
               class="block px-4 py-3 hover:bg-yellow-300"
             >
-              Eastern Province
+              {{ t('eastern') }}
             </router-link>
 
             <router-link
@@ -129,7 +129,7 @@
               @click="closeMenus"
               class="block px-4 py-3 hover:bg-yellow-300"
             >
-              Western Province
+              {{ t('western') }}
             </router-link>
           </div>
         </li>
@@ -140,7 +140,7 @@
             class="hover:text-yellow-300 transition"
             active-class="text-yellow-300 border-b-4 border-yellow-300 pb-1"
           >
-            {{ t.contact }}
+            {{ t('contact') }}
           </router-link>
         </li>
 
@@ -162,50 +162,27 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { state, t, setLocale } from '../i18n.js'
+
 export default {
-  name: "Navbar",
+  name: 'Navbar',
 
   data() {
     return {
       showGallery: false,
-      showDestination: false,
-
-      language: "en",
-
-      translations: {
-        en: {
-          home: "Home",
-          about: "About",
-          services: "Services",
-          gallery: "Gallery",
-          destination: "Destination",
-          contact: "Contact"
-        },
-
-        rw: {
-          home: "Ahabanza",
-          about: "Ibitwerekeye",
-          services: "Serivisi",
-          gallery: "Amafoto",
-          destination: "Aho Wasura",
-          contact: "Twandikire"
-        },
-
-        fr: {
-          home: "Accueil",
-          about: "À propos",
-          services: "Services",
-          gallery: "Galerie",
-          destination: "Destinations",
-          contact: "Contact"
-        }
-      }
+      showDestination: false
     }
   },
 
   computed: {
-    t() {
-      return this.translations[this.language]
+    language: {
+      get() {
+        return state.locale
+      },
+      set(value) {
+        setLocale(value)
+      }
     }
   },
 
@@ -223,7 +200,9 @@ export default {
     closeMenus() {
       this.showGallery = false
       this.showDestination = false
-    }
+    },
+
+    t
   }
 }
 </script>

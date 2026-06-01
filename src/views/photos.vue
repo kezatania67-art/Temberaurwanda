@@ -8,15 +8,15 @@
     >
       <div class="hero-overlay">
         <h1 class="hero-title">
-          Discover Rwanda
+          {{ t('photosHeroTitle') }}
         </h1>
 
         <p class="hero-text">
-          Explore breathtaking landscapes, wildlife and unforgettable experiences.
+          {{ t('photosHeroText') }}
         </p>
 
         <button class="hero-btn">
-          Explore Gallery
+          {{ t('photosExploreNow') }}
         </button>
       </div>
     </section>
@@ -31,16 +31,14 @@
 
       <div class="featured-content">
 
-        <h2>Land Of A Thousand Hills 🇷🇼</h2>
+        <h2>{{ t('landOfHills') }}</h2>
 
         <p>
-          Rwanda offers some of Africa's most beautiful scenery,
-          from volcanoes and lakes to wildlife and vibrant cities.
-          Every destination tells a unique story.
+          {{ t('rwandaOffers') }}
         </p>
 
         <button>
-          Read More
+          {{ t('readMore') }}
         </button>
 
       </div>
@@ -52,7 +50,7 @@
     <section class="gallery-section">
 
       <div class="section-title">
-        <h2>Photo Gallery</h2>
+        <h2>{{ t('photoGallery') }}</h2>
       </div>
 
       <div class="gallery-grid">
@@ -60,42 +58,42 @@
         <div class="gallery-card tall">
           <img :src="tembera1">
           <div class="overlay">
-            <h3>Nature</h3>
+            <h3>{{ t('nature') }}</h3>
           </div>
         </div>
 
         <div class="gallery-card">
           <img :src="tembera3">
           <div class="overlay">
-            <h3>Adventure</h3>
+            <h3>{{ t('adventure') }}</h3>
           </div>
         </div>
 
         <div class="gallery-card">
           <img :src="tembera4">
           <div class="overlay">
-            <h3>Culture</h3>
+            <h3>{{ t('culture') }}</h3>
           </div>
         </div>
 
         <div class="gallery-card wide">
           <img :src="tembera5">
           <div class="overlay">
-            <h3>Tourism</h3>
+            <h3>{{ t('tourism') }}</h3>
           </div>
         </div>
 
         <div class="gallery-card">
           <img :src="tembera6">
           <div class="overlay">
-            <h3>Wildlife</h3>
+            <h3>{{ t('wildlife') }}</h3>
           </div>
         </div>
 
         <div class="gallery-card">
           <img :src="tembera2">
           <div class="overlay">
-            <h3>Explore</h3>
+            <h3>{{ t('explore') }}</h3>
           </div>
         </div>
 
@@ -109,17 +107,17 @@
 
       <div class="stat-card">
         <h2>100+</h2>
-        <p>Tourist Sites</p>
+        <p>{{ t('touristSites') }}</p>
       </div>
 
       <div class="stat-card">
         <h2>50K+</h2>
-        <p>Visitors</p>
+        <p>{{ t('visitors') }}</p>
       </div>
 
       <div class="stat-card">
         <h2>5</h2>
-        <p>Provinces</p>
+        <p>{{ t('provinces') }}</p>
       </div>
 
     </section>
@@ -128,6 +126,7 @@
 </template>
 
 <script>
+import { t } from '../i18n.js'
 import tembera1 from '../assets/images/tembera1.png'
 import tembera2 from '../assets/images/tembera2.png'
 import tembera3 from '../assets/images/tembera3.png'

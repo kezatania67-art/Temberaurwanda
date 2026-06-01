@@ -1,26 +1,30 @@
+<script setup>
+import { t } from '../i18n.js'
+</script>
+
 <template>
     <footer class="bg-green-800 text-white px-8 py-10 mt-10">
         <div class="flex flex-wrap justify-between gap-8">
             <div>
-                <h3 class="text-yellow-300 font-bold text-lg mb-3">TEMBERA U RWANDA</h3>
-                <p class="text -sm text-green-200">Discover the beauty of a land of a thousand hills</p>
+                <h3 class="text-yellow-300 font-bold text-lg mb-3">{{ t('footerBrand') }}</h3>
+                <p class="text -sm text-green-200">{{ t('footerDesc') }}</p>
             </div>
     
         <!..Quick Links..>
         <div>
-            <h3 class="text-yellow-300 font-bold text-lg mb-3">Quick Links</h3>
+            <h3 class="text-yellow-300 font-bold text-lg mb-3">{{ t('quickLinks') }}</h3>
             <ul class="space-y-2 text-sm">
                 <li>
-                <RouterLink to="/home" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">Home</RouterLink >
+                <RouterLink to="/home" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">{{ t('home') }}</RouterLink >
                 </li>
                  <li>
-                <RouterLink to="/about" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">About</RouterLink >
+                <RouterLink to="/about" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">{{ t('about') }}</RouterLink >
                 </li>
                  <li>
-                <RouterLink to="/contact" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">Contact</RouterLink >
+                <RouterLink to="/contact" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">{{ t('contact') }}</RouterLink >
                 </li>
                  <li>
-                <RouterLink to="/services" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">Service</RouterLink >
+                <RouterLink to="/services" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">{{ t('services') }}</RouterLink >
                 </li>
                 </ul>
                 </div>
@@ -29,45 +33,45 @@
         
                     <!..Destinations>
                     <div>
-                    <h3 class="text-yellow-300 font-bold text-lg mb-3">Destinations</h3>
+                    <h3 class="text-yellow-300 font-bold text-lg mb-3">{{ t('destinations') }}</h3>
                     <ul class="space-y-2 text-sm">
                         <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Northern Province</RouterLink>
+                            <RouterLink to="/northern" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">{{ t('northern') }}</RouterLink>
                         </li>
                          <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Kigali Province</RouterLink>
+                            <RouterLink to="/kigali" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">{{ t('kigali') }}</RouterLink>
                         </li>
                          <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Eastern Province</RouterLink>
+                            <RouterLink to="/eastern" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">{{ t('eastern') }}</RouterLink>
                         </li>
                          <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Southern Province</RouterLink>
+                            <RouterLink to="/southern" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">{{ t('southern') }}</RouterLink>
                         </li>
                          <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Western Province</RouterLink>
+                            <RouterLink to="/western" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">{{ t('western') }}</RouterLink>
                         </li>
                     </ul>
                     </div>
                     
                      <!..Contact>
                     <div>
-                    <h3 class="text-yellow-300 font-bold text-lg mb-3">Contact Us</h3>
+                    <h3 class="text-yellow-300 font-bold text-lg mb-3">{{ t('contactUs') }}</h3>
                     <ul class="space-y-2 text-sm">
                         <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Number:+250788750842</RouterLink>
+                            <span class="text-white font-bold text-lg mb-3">{{ t('number') }}</span>
                         </li>
                          <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Email:kezatania67@gmail.com</RouterLink>
+                            <span class="text-white font-bold text-lg mb-3">{{ t('email') }}</span>
                         </li>
                          <li>
-                            <RouterLink to="/" class="hover:hg-yellow-300 text-white font-bold text-lg mb-3">Kagugu,Kigali-Rwanda</RouterLink>
+                            <span class="text-white font-bold text-lg mb-3">{{ t('address') }}</span>
                         </li>
                      </ul>   
 </div>
                 </div>
                 <!..place for copyright>
                 <div class="border-t border-green-600 mt-8 pt-4 text-center text-sm text-green-200 justify center">
-                    © 2026 Tembera U Rwanda. All rights reserved.
+                    {{ t('copyright') }}
                 </div>
             
     </footer>

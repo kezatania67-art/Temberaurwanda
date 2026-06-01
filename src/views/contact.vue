@@ -8,13 +8,13 @@
       <div class="blob blob3"></div>
 
       <div class="hero-content">
-        <h1>Let's Explore Rwanda Together</h1>
+        <h1>{{ t('letsExplore') }}</h1>
         <p>
-          Contact Tembera u Rwanda and start your unforgettable adventure.
+          {{ t('contactIntro') }}
         </p>
 
         <a href="#contact-section" class="hero-btn">
-          Get Started
+          {{ t('getStarted') }}
         </a>
       </div>
     </section>
@@ -23,20 +23,20 @@
     <section class="contact-cards">
       <div class="card">
         <div class="icon">📞</div>
-        <h3>Call Us</h3>
-        <p>+250 788 123 456</p>
+        <h3>{{ t('callUs') }}</h3>
+        <p>{{ t('number') }}</p>
       </div>
 
       <div class="card">
         <div class="icon">📧</div>
-        <h3>Email Us</h3>
-        <p>info@temberaurwanda.com</p>
+        <h3>{{ t('emailUs') }}</h3>
+        <p>{{ t('email') }}</p>
       </div>
 
       <div class="card">
         <div class="icon">📍</div>
-        <h3>Location</h3>
-        <p>Kigali, Rwanda</p>
+        <h3>{{ t('location') }}</h3>
+        <p>{{ t('address') }}</p>
       </div>
     </section>
 
@@ -46,60 +46,60 @@
       <div class="form-container">
 
         <div class="form-side">
-          <h2>Send a Message</h2>
+          <h2>{{ t('sendMessageTitle') }}</h2>
 
           <form @submit.prevent="submitForm">
             <input
               type="text"
-              placeholder="Full Name"
+              :placeholder="t('fullName')"
               v-model="form.name"
               required
             />
 
             <input
               type="email"
-              placeholder="Email Address"
+              :placeholder="t('emailAddress')"
               v-model="form.email"
               required
             />
 
             <input
               type="text"
-              placeholder="Subject"
+              :placeholder="t('subject')"
               v-model="form.subject"
               required
             />
 
             <textarea
               rows="6"
-              placeholder="Your Message"
+              :placeholder="t('yourMessage')"
               v-model="form.message"
               required
             ></textarea>
 
             <button type="submit">
-              Send Message
+              {{ t('sendMessage') }}
             </button>
           </form>
 
           <div v-if="success" class="success">
-            ✓ Message Sent Successfully
+            {{ t('messageSent') }}
           </div>
         </div>
 
         <div class="info-side">
-          <h2>Why Contact Us?</h2>
+          <h2>{{ t('whyContactUs') }}</h2>
 
           <ul>
-            <li>✓ Fast Response</li>
-            <li>✓ Custom Tour Packages</li>
-            <li>✓ Local Travel Experts</li>
-            <li>✓ Affordable Prices</li>
-            <li>✓ 24/7 Customer Support</li>
+            <li>✓ {{ t('fastResponse') }}</li>
+            <li>✓ {{ t('customPackages') }}</li>
+            <li>✓ {{ t('localExperts') }}</li>
+            <li>✓ {{ t('affordablePrices') }}</li>
+            <li>✓ {{ t('support247') }}</li>
           </ul>
 
           <div class="quote">
-            "Discover the beauty of Rwanda with trusted guides and unforgettable experiences."
+            "{{ t('contactIntro') }}"
           </div>
         </div>
 
@@ -111,29 +111,29 @@
 
       <div class="stat-box">
         <h2>500+</h2>
-        <p>Happy Travelers</p>
+        <p>{{ t('happyTravelers') }}</p>
       </div>
 
       <div class="stat-box">
         <h2>50+</h2>
-        <p>Tour Destinations</p>
+        <p>{{ t('tourDestinations') }}</p>
       </div>
 
       <div class="stat-box">
         <h2>10+</h2>
-        <p>Years Experience</p>
+        <p>{{ t('yearsExperience') }}</p>
       </div>
 
       <div class="stat-box">
         <h2>24/7</h2>
-        <p>Support</p>
+        <p>{{ t('support') }}</p>
       </div>
 
     </section>
 
     <!-- MAP -->
     <section class="map-section">
-      <h2>Find Us</h2>
+      <h2>{{ t('discoverUs') }}</h2>
 
       <iframe
         src="https://www.google.com/maps?q=Kigali,Rwanda&output=embed"
@@ -147,6 +147,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { t } from '../i18n.js'
 
 const success = ref(false)
 
