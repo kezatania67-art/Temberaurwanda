@@ -42,7 +42,8 @@ component: Contact
 {
 path: '/photos',
 name: 'photos',
-component: photos
+component: photos,
+alias: '/gallery'
 },
 
 {

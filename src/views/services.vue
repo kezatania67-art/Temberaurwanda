@@ -122,6 +122,8 @@ export default {
   },
 
   methods: {
+    t,
+
     handleImageUpload(event) {
       const file = event.target.files[0]
 

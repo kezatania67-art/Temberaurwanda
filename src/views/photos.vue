@@ -146,6 +146,10 @@ export default {
       tembera5,
       tembera6
     }
+  },
+
+  methods: {
+    t
   }
 }
 </script>
