@@ -1,100 +1,224 @@
 <script setup>
-import heroImage from '../assets/images/tembera6.png'
-import kigaliImage from '../assets/images/tembera6.png'
-import gorillaImage from '../assets/images/tembera5.png'
-import lakeImage from '../assets/images/tembera7.png'
+import { ref, onMounted } from 'vue'
+
+import hero1 from '../assets/images/tembera1.png'
+import hero2 from '../assets/images/tembera4.png'
+import hero3 from '../assets/images/tembera3.png'
+
+const images = [hero1, hero2, hero3]
+const currentImage = ref(0)
+
+onMounted(() => {
+  setInterval(() => {
+    currentImage.value = (currentImage.value + 1) % images.length
+  }, 5000)
+})
+
+const destinations = [
+  {
+    title: 'Kigali City',
+    image: hero2,
+    description: 'Modern city life, culture and nightlife.'
+  },
+  {
+    title: 'Volcanoes National Park',
+    image: hero1,
+    description: 'Home of the mountain gorillas.'
+  },
+  {
+    title: 'Lake Kivu',
+    image: hero3,
+    description: 'Relax and enjoy beautiful lakeside views.'
+  }
+]
 </script>
 
 <template>
-  <div>
+  <div class="bg-black text-white overflow-hidden">
 
     <!-- HERO SECTION -->
     <section
-      class="h-screen bg-cover bg-center flex items-center justify-center text-white"
-      :style="{ backgroundImage: `url(${heroImage})` }"
+      class="relative h-screen flex items-center justify-center text-center"
     >
-      <div class="bg-black/60 p-10 rounded-2xl text-center">
-        <h1 class="text-5xl font-bold mb-4">Tembera u Rwanda</h1>
+      <transition name="fade" mode="out-in">
+        <img
+          :key="currentImage"
+          :src="images[currentImage]"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </transition>
 
-        <p class="text-xl mb-6">
-          Discover the beauty of Rwanda — Land of a Thousand Hills
+      <div class="absolute inset-0 bg-black/50"></div>
+
+      <div class="relative z-10 px-6 max-w-5xl">
+        <h1
+          class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-pulse"
+        >
+          Discover The Beauty Of Rwanda
+        </h1>
+
+        <p
+          class="text-lg md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8"
+        >
+          Explore breathtaking landscapes, wildlife adventures,
+          cultural experiences and unforgettable destinations.
         </p>
 
-        <button
-          class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-3 rounded-xl transition"
-        >
-          Explore Now
-        </button>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <button
+            class="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full font-bold transition duration-300 hover:scale-110"
+          >
+            Explore Now
+          </button>
+
+          <button
+            class="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300"
+          >
+            Watch Video
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-20 bg-zinc-900">
+      <div
+        class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 px-6 text-center"
+      >
+        <div>
+          <h2 class="text-5xl font-bold text-yellow-500">30+</h2>
+          <p class="text-gray-400 mt-2">Destinations</p>
+        </div>
+
+        <div>
+          <h2 class="text-5xl font-bold text-yellow-500">100K+</h2>
+          <p class="text-gray-400 mt-2">Visitors</p>
+        </div>
+
+        <div>
+          <h2 class="text-5xl font-bold text-yellow-500">12</h2>
+          <p class="text-gray-400 mt-2">Provinces & Districts</p>
+        </div>
+
+        <div>
+          <h2 class="text-5xl font-bold text-yellow-500">24/7</h2>
+          <p class="text-gray-400 mt-2">Travel Support</p>
+        </div>
       </div>
     </section>
 
     <!-- DESTINATIONS -->
-    <section class="py-16 px-8 bg-gray-100">
-      <h2 class="text-4xl font-bold text-center text-green-800 mb-12">
-        Popular Destinations
+    <section class="py-24 px-6">
+      <div class="max-w-7xl mx-auto">
+
+        <h2
+          class="text-4xl md:text-5xl font-bold text-center mb-16"
+        >
+          Popular Destinations
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            v-for="destination in destinations"
+            :key="destination.title"
+            class="group rounded-3xl overflow-hidden bg-zinc-900 hover:scale-105 transition duration-500"
+          >
+            <div class="overflow-hidden">
+              <img
+                :src="destination.image"
+                class="h-80 w-full object-cover group-hover:scale-110 transition duration-700"
+              />
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                {{ destination.title }}
+              </h3>
+
+              <p class="text-gray-400">
+                {{ destination.description }}
+              </p>
+
+              <button
+                class="mt-5 bg-yellow-500 text-black px-5 py-3 rounded-full hover:bg-yellow-400 transition"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="py-24 bg-zinc-950">
+      <div
+        class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6"
+      >
+        <div>
+          <h2 class="text-5xl font-bold mb-6">
+            Experience Rwanda Like Never Before
+          </h2>
+
+          <p class="text-gray-400 text-lg leading-relaxed">
+            Discover wildlife safaris, luxury stays, cultural
+            experiences, beautiful lakes, and vibrant city life.
+            Every journey tells a unique story.
+          </p>
+
+          <button
+            class="mt-8 bg-yellow-500 text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition"
+          >
+            Start Your Adventure
+          </button>
+        </div>
+
+        <div
+          class="backdrop-blur-xl bg-white/10 border border-white/20 p-8 rounded-3xl"
+        >
+          <h3 class="text-3xl font-bold mb-4">
+            Why Choose Rwanda?
+          </h3>
+
+          <ul class="space-y-4 text-gray-300">
+            <li>✓ Clean and safe cities</li>
+            <li>✓ Mountain gorilla trekking</li>
+            <li>✓ Beautiful national parks</li>
+            <li>✓ Modern tourism experiences</li>
+            <li>✓ Rich culture and hospitality</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 text-center px-6">
+      <h2 class="text-5xl font-bold mb-6">
+        Ready To Explore Rwanda?
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+        Plan your next adventure and discover the Land of a Thousand Hills.
+      </p>
 
-        <!-- CARD 1 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img
-            :src="kigaliImage"
-            alt="Kigali"
-            class="h-56 w-full object-cover"
-          />
-
-          <div class="p-6">
-            <h3 class="text-2xl font-bold text-green-700 mb-3">
-              Kigali City
-            </h3>
-
-            <p class="text-gray-600">
-              Explore Rwanda’s clean and modern capital city.
-            </p>
-          </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img
-            :src="gorillaImage"
-            alt="Gorilla"
-            class="h-56 w-full object-cover"
-          />
-
-          <div class="p-6">
-            <h3 class="text-2xl font-bold text-green-700 mb-3">
-              Volcanoes National Park
-            </h3>
-
-            <p class="text-gray-600">
-              Meet the famous mountain gorillas.
-            </p>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img
-            :src="lakeImage"
-            alt="Lake Kivu"
-            class="h-56 w-full object-cover"
-          />
-
-          <div class="p-6">
-            <h3 class="text-2xl font-bold text-green-700 mb-3">
-              Lake Kivu
-            </h3>
-
-            <p class="text-gray-600">
-              Relax at one of Africa’s most beautiful lakes.
-            </p>
-          </div>
-        </div>
-
-      </div>
+      <button
+        class="bg-yellow-500 text-black px-10 py-5 rounded-full text-lg font-bold hover:scale-110 transition"
+      >
+        Book Your Journey
+      </button>
     </section>
 
   </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

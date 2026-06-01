@@ -1,93 +1,121 @@
-<!-- About.vue -->
 <template>
-  <div class="min-h-screen bg-gray-100">
+  <div class="min-h-screen bg-gradient-to-b from-green-50 to-white py-16 px-6">
 
-    <!-- HEADER -->
-    <section class="bg-green-800 text-white py-20 text-center">
-      <h1 class="text-5xl font-bold mb-4">About Tembera u Rwanda</h1>
+    <!-- TITLE -->
+    <div class="text-center mb-12 animate-fadeIn">
+      <h1 class="text-5xl font-bold text-green-700 mb-4">
+        About Rwanda
+      </h1>
 
-      <p class="text-xl max-w-3xl mx-auto">
-        Tembera u Rwanda is a tourism platform created to showcase the beauty,
-        culture, wildlife, and amazing destinations of Rwanda.
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Discover the beauty, culture, and story of the Land of a Thousand Hills.
       </p>
-    </section>
+    </div>
 
-    <!-- ABOUT CONTENT -->
-    <section class="py-16 px-8">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <!-- MAIN SECTION -->
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-        <!-- IMAGE -->
-        <img
-          src="/src/assets/images/tembera3.png"
-          alt="Rwanda"
-          class="rounded-3xl shadow-2xl"
-        />
+      <!-- IMAGE AREA -->
+      <div class="relative group animate-slideLeft">
 
-        <!-- TEXT -->
-        <div>
-          <h2 class="text-4xl font-bold text-green-800 mb-6">
-            Discover Rwanda
-          </h2>
+        <div class="absolute -inset-2 bg-green-200 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition"></div>
 
-          <p class="text-gray-700 text-lg mb-4">
-            Rwanda is known as the Land of a Thousand Hills because of its
-            beautiful landscapes and natural beauty.
-          </p>
-
-          <p class="text-gray-700 text-lg mb-4">
-            Visitors enjoy gorilla trekking, national parks, lakes, cultural
-            heritage, and Kigali city tours.
-          </p>
-
-          <p class="text-gray-700 text-lg">
-            Our mission is to help tourists explore Rwanda easily and discover
-            the country’s amazing experiences.
-          </p>
+        <div class="relative bg-white p-4 rounded-3xl shadow-2xl">
+          <img
+            :src="aboutImage"
+            alt="About Rwanda"
+            class="rounded-2xl w-full h-[350px] object-cover hover:scale-105 transition duration-500"
+          />
         </div>
 
       </div>
-    </section>
 
-    <!-- WHY VISIT -->
-    <section class="bg-white py-16 px-8">
-      <h2 class="text-4xl font-bold text-center text-green-800 mb-12">
-        Why Visit Rwanda?
-      </h2>
+      <!-- TEXT SECTION -->
+      <div class="animate-slideRight">
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-green-700 mb-4">
+          Why Rwanda?
+        </h2>
 
-        <div class="bg-green-100 p-8 rounded-2xl shadow">
-          <h3 class="text-2xl font-bold mb-4 text-green-700">
-            Beautiful Nature
-          </h3>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Rwanda is one of Africa’s most beautiful and fast-growing tourism destinations.
+          Known for its clean cities, rich wildlife, and friendly people, it offers unforgettable experiences
+          for every traveler.
+        </p>
 
-          <p class="text-gray-700">
-            Enjoy mountains, lakes, forests, and wildlife across the country.
-          </p>
+        <div class="space-y-4">
+
+          <div class="flex items-center gap-3 hover:translate-x-2 transition">
+            <span class="text-green-600 text-xl">✔</span>
+            <p>Safe and clean environment</p>
+          </div>
+
+          <div class="flex items-center gap-3 hover:translate-x-2 transition">
+            <span class="text-green-600 text-xl">✔</span>
+            <p>Mountain gorilla trekking</p>
+          </div>
+
+          <div class="flex items-center gap-3 hover:translate-x-2 transition">
+            <span class="text-green-600 text-xl">✔</span>
+            <p>Beautiful landscapes & lakes</p>
+          </div>
+
+          <div class="flex items-center gap-3 hover:translate-x-2 transition">
+            <span class="text-green-600 text-xl">✔</span>
+            <p>Rich culture and heritage</p>
+          </div>
+
         </div>
 
-        <div class="bg-yellow-100 p-8 rounded-2xl shadow">
-          <h3 class="text-2xl font-bold mb-4 text-yellow-700">
-            Rich Culture
-          </h3>
-
-          <p class="text-gray-700">
-            Experience traditional dance, art, food, and Rwandan hospitality.
-          </p>
-        </div>
-
-        <div class="bg-blue-100 p-8 rounded-2xl shadow">
-          <h3 class="text-2xl font-bold mb-4 text-blue-700">
-            Safe & Clean
-          </h3>
-
-          <p class="text-gray-700">
-            Rwanda is one of Africa’s cleanest and safest travel destinations.
-          </p>
-        </div>
+        <button class="mt-8 bg-green-700 text-white px-6 py-3 rounded-full hover:bg-green-900 hover:scale-105 transition">
+          Explore More
+        </button>
 
       </div>
-    </section>
+
+    </div>
 
   </div>
 </template>
+
+<script>
+import aboutImage from '../assets/images/tembera2.png'
+
+export default {
+  name: "About",
+  data() {
+    return {
+      aboutImage
+    }
+  }
+}
+</script>
+
+<style scoped>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slideLeft {
+  animation: slideLeft 1s ease-out;
+}
+
+.animate-slideRight {
+  animation: slideRight 1s ease-out;
+}
+</style>

@@ -20,7 +20,7 @@
                 <RouterLink to="/contact" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">Contact</RouterLink >
                 </li>
                  <li>
-                <RouterLink to="/service" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">Service</RouterLink >
+                <RouterLink to="/services" class="hover:text-yellow-300 text-white font-bold text-lg mb-3">Service</RouterLink >
                 </li>
                 </ul>
                 </div>
