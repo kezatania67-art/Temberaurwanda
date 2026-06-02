@@ -144,6 +144,16 @@
           </router-link>
         </li>
 
+        <!-- LOGIN -->
+        <li>
+          <router-link
+            to="/login"
+            class="bg-white text-green-700 px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 hover:text-black transition"
+          >
+            Login
+          </router-link>
+        </li>
+
         <!-- LANGUAGE SWITCHER -->
         <li>
           <select
@@ -162,7 +172,6 @@
 </template>
 
 <script>
-import { computed } from 'vue'
 import { state, t, setLocale } from '../i18n.js'
 
 export default {

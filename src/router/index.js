@@ -4,6 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import About from '../views/about.vue'
 import Service from '../views/services.vue'
 import Contact from '../views/contact.vue'
+import Login from '../views/login.vue'
+import Register from '../views/register.vue'
 
 import photos from '../views/photos.vue'
 import videos from '../views/videos.vue'
@@ -38,6 +40,20 @@ path: '/contact',
 name: 'Contact',
 component: Contact
 },
+
+
+{
+path: '/login',
+name: 'Login',
+component: Login
+},
+
+{
+path: '/register',
+name: 'Register',
+component: Register
+},
+
 
 {
 path: '/photos',
