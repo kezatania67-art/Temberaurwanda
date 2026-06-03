@@ -2,7 +2,6 @@
   <nav class="bg-green-700 text-white shadow-xl sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center px-8 py-4">
 
-      <!-- LOGO -->
       <div class="flex items-center gap-3">
         <img
           src="@/assets/logo.jpg"
@@ -15,7 +14,6 @@
         </h1>
       </div>
 
-      <!-- MENU -->
       <ul class="flex items-center gap-8 text-lg font-semibold">
 
         <li>
@@ -48,7 +46,6 @@
           </router-link>
         </li>
 
-        <!-- GALLERY -->
         <li class="relative">
           <button
             @click="toggleGallery"
@@ -79,7 +76,6 @@
           </div>
         </li>
 
-        <!-- DESTINATIONS -->
         <li class="relative">
           <button
             @click="toggleDestination"
@@ -144,7 +140,16 @@
           </router-link>
         </li>
 
-        <!-- LOGIN -->
+        <li>
+          <router-link
+            to="/dashboard"
+            class="hover:text-yellow-300 transition"
+            active-class="text-yellow-300 border-b-4 border-yellow-300 pb-1"
+          >
+            Dashboard
+          </router-link>
+        </li>
+
         <li>
           <router-link
             to="/login"
@@ -154,7 +159,6 @@
           </router-link>
         </li>
 
-        <!-- LANGUAGE SWITCHER -->
         <li>
           <select
             v-model="language"
